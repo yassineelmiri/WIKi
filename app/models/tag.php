@@ -11,33 +11,34 @@ class Tag
         $this->name = $name;
     }
 
-    // Getter pour tag_id
+
     public function getTagId()
     {
         return $this->tag_id;
     }
 
-    // Setter pour tag_id
+
     public function setTagId($tag_id)
     {
         $this->tag_id = $tag_id;
     }
 
-    // Getter pour name
+
     public function getName()
     {
         return $this->name;
     }
 
-    // Setter pour name
+
     public function setName($name)
     {
         $this->name = $name;
     }
 
+
     public function save()
     {
-        // Logique pour sauvegarder le tag dans la base de données
+
         $pdo = Database::getInstance();
 
         $stmt = $pdo->prepare("INSERT INTO Tag (name) VALUES (?)");
@@ -47,7 +48,7 @@ class Tag
         $pdo = null;
     }
 
-    // Logique pour récupérer tous les tags depuis la base de données
+
     public static function getAllTags()
     {
         $pdo = Database::getInstance();
@@ -60,7 +61,7 @@ class Tag
         return $tags;
     }
 
-    // Logique pour récupérer un tag spécifique par son ID depuis la base de données
+
     public static function getTagById($tagId)
     {
         $pdo = Database::getInstance();
@@ -76,7 +77,7 @@ class Tag
         return $tag;
     }
 
-    // Logique pour mettre à jour un tag par son ID
+
     public static function updateTagById($tagId, $name)
     {
         $pdo = Database::getInstance();
@@ -89,7 +90,7 @@ class Tag
         $pdo = null;
     }
 
-    // Logique pour supprimer un tag par son ID
+
     public static function deleteTagById($tagId)
     {
         $pdo = Database::getInstance();
