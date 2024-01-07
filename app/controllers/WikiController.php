@@ -6,32 +6,35 @@ class WikiController
     public function showAllWikis()
     {
         $wikis = Wiki::getAllWikis();
-        // Vous pouvez passer $wikis à votre vue (frontend) pour l'affichage.
+        include 'app/views/wiki.php';
     }
 
     public function showWikiById($wikiId)
     {
         $wiki = Wiki::getWikiById($wikiId);
-        // Vous pouvez passer $wiki à votre vue (frontend) pour l'affichage.
+        include 'app/views/wiki.php';
     }
 
     public function addWiki($authorId, $categoryId, $tags, $content)
     {
         $newWiki = new Wiki(null, $authorId, $categoryId, $tags, $content);
         $newWiki->save();
-        // Redirection ou autre logique après l'ajout.
+        header('Location: index.php');
+        exit();
     }
 
     public function updateWikiById($wikiId, $title, $content)
     {
         Wiki::updateWikiById($wikiId, $title, $content);
-        // Redirection ou autre logique après la mise à jour.
+        header('Location: wiki.php?wikiId=' . $wikiId);
+        exit();
     }
 
     public function deleteWiki($wikiId)
     {
         Wiki::deleteWikiById($wikiId);
-        // Redirection ou autre logique après la suppression.
+        header('Location: index.php');
+        exit();
     }
 }
-?>
+
