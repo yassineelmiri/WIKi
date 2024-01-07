@@ -14,7 +14,7 @@
     <ul>
         <?php foreach ($tags as $tag): ?>
             <li>
-                <a href="showTag.php?id=<?php echo $tag['tag_id']; ?>">
+                <a href="tag.php?id=<?php echo $tag['tag_id']; ?>">
                     <?php echo $tag['name']; ?>
                 </a>
             </li>
