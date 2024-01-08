@@ -127,7 +127,7 @@ ob_start();
                     <ul>
                         <li><a href="index.php?action=index">Homepage</a></li>
                         <li><a href="../app/views/wiki/addwiki.php">Liste Wikis</a></li>
-                        <li><a href="index.php?action=dashboard">statistique</a></li>
+                        <li><a href="index.php?action=dashboard">statistique </a></li>
                         <li>
                             <span class="opener">Gategory</span>
                             <ul>
