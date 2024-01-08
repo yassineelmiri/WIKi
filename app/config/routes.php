@@ -1,8 +1,8 @@
 <?php
 
 // Inclure les contrôleurs nécessaires
-require_once 'app/controllers/HomeController.php';
-require_once 'app/controllers/DashboardController.php';
+require_once '../controllers/HomeController.php';
+require_once '../controllers/DashboardController.php';
 
 // Définir les routes
 $routes = [
@@ -31,14 +31,13 @@ foreach ($routes as $pattern => $params) {
 if ($route) {
     $controllerName = $route['controller'];
     $action = $route['action'];
-   
+
     require_once "app/controllers/{$controllerName}.php";
 
     $controller = new $controllerName();
     $controller->$action();
 } else {
-
-    echo '404 - Not Found';
+    header('Location: 404.php');
 }
 
 ?>

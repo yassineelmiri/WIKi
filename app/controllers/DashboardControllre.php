@@ -1,7 +1,13 @@
 <?php
 require_once 'app/models/Wiki.php'; 
 require_once 'app/models/User.php';
-require_once 'app/models/Dashbord.php'; 
+require_once 'app/models/Dashbord.php';
+
+require '../autoloader.php';
+Autoloader::registre();
+use app\models\Wiki;
+use app\models\User;
+use app\models\Dashboard;
 
 class DashboardController {
     public function index() {

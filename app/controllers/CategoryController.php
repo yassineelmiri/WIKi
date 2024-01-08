@@ -1,19 +1,20 @@
 <?php
 
-require_once 'Category.php';
+require_once __DIR__ . '/../models/Category.php';
+
 
 class CategoryController {
     
     // Action pour afficher toutes les catégories
     public function showAllCategories() {
         $categories = Category::getAllCategories();
-        include 'app/views/category.php';
+        include __DIR__ . '/../views/category.php';
     }
 
     // Action pour afficher une catégorie spécifique par son ID
     public function showCategoryById($categoryId) {
         $category = Category::getCategoryById($categoryId);
-        include 'app/views/category.php';
+        include __DIR__ . '/../views/category.php';
     }
 
     // Action pour ajouter une nouvelle catégorie

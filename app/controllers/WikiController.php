@@ -1,18 +1,21 @@
 <?php
-require_once 'app/models/Wiki.php';
+require_once __DIR__ . '/../models/Wiki.php';
+
 
 class WikiController
 {
     public function showAllWikis()
     {
         $wikis = Wiki::getAllWikis();
-        include 'app/views/wiki.php';
+        include __DIR__ . '/../views/wiki.php';
+
     }
 
     public function showWikiById($wikiId)
     {
         $wiki = Wiki::getWikiById($wikiId);
-        include 'app/views/wiki.php';
+         include __DIR__ . '/../views/wiki.php';
+
     }
 
     public function addWiki($authorId, $categoryId, $tags, $content)

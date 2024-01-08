@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/Database.php';
 
 class Tag
 {
@@ -10,6 +11,7 @@ class Tag
         $this->tag_id = $tag_id;
         $this->name = $name;
     }
+
 
 
     public function getTagId()

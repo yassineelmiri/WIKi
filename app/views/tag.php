@@ -1,28 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$title = "Tag";
+ob_start();
+?>
+<h1>Liste des Tags</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tags</title>
-    <!-- Inclure vos fichiers CSS et JavaScript ici -->
-</head>
-
-<body>
-    <h1>Liste des Tags</h1>
-
-    <ul>
-        <?php foreach ($tags as $tag): ?>
-            <li>
-                <a href="tag.php?id=<?php echo $tag['tag_id']; ?>">
-                    <?php echo $tag['name']; ?>
-                </a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
+<ul>
+    <?php foreach ($tags as $tag): ?>
+        <li>
+            <a href="tag.php?id=<?php echo $tag['tag_id']; ?>">
+                <?php echo $tag['name']; ?>
+            </a>
+        </li>
+    <?php endforeach; ?>
+</ul>
 
 
-
-</body>
-
-</html>
+<?php $content = ob_get_clean(); ?>
+<?php include 'layout/layout.php'; ?>

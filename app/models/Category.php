@@ -1,7 +1,5 @@
 <?php
-
-require_once 'app/models/Database.php';
-
+require_once __DIR__ . '/Database.php';
 
 
 class Category

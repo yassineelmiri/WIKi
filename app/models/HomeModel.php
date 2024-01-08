@@ -1,7 +1,8 @@
 <?php
 
-require_once 'app/models/Wiki.php';
-require_once 'app/models/Category.php';
+require_once 'Wiki.php';
+require_once 'Category.php';
+require_once __DIR__ . '/../config/config.php';
 
 class HomeModel
 {
@@ -22,7 +23,7 @@ class HomeModel
     {
         $pdo = Database::getInstance();
 
-        $stmt = $pdo->query("SELECT * FROM Category ORDER BY created_at DESC LIMIT 5");
+        $stmt = $pdo->query("SELECT * FROM 	category ORDER BY category_id DESC LIMIT 5");
         $latestCategories = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $pdo = null;

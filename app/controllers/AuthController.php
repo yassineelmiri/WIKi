@@ -11,7 +11,8 @@ class AuthController
 
             // Exemple de code (à adapter selon votre logique d'authentification réelle)
             if ($this->validateUser($email, $password)) {
-                
+                // Utilisateur valide, effectuez le traitement nécessaire (par exemple, définir une session)
+                // Redirection vers le tableau de bord
                 header('Location: dashboard.php');
                 exit();
             } else {
@@ -24,7 +25,9 @@ class AuthController
 
     private function validateUser($email, $password)
     {
-        
+        // Logique de validation d'utilisateur (vérification dans la base de données, etc.)
+        // Retourne true si les identifiants sont valides, sinon false
+        // Exemple basique : vérifiez une combinaison email/mot de passe dans une base de données
         $validEmail = 'user@example.com';
         $validPassword = password_hash('password123', PASSWORD_DEFAULT);
 
