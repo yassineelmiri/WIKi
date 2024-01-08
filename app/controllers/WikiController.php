@@ -14,13 +14,13 @@ class WikiController
     public function showWikiById($wikiId)
     {
         $wiki = Wiki::getWikiById($wikiId);
-         include __DIR__ . '/../views/wiki.php';
+        include __DIR__ . '/../views/wiki.php';
 
     }
 
-    public function addWiki($authorId, $categoryId, $tags, $content)
+    public function addWiki($title, $content, $user_id)
     {
-        $newWiki = new Wiki(null, $authorId, $categoryId, $tags, $content);
+        $newWiki = new Wiki(null,$title, $content, $user_id,null);
         $newWiki->save();
         header('Location: index.php');
         exit();

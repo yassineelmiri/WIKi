@@ -14,10 +14,11 @@ class Wiki
         $this->wiki_id = $wiki_id;
         $this->title = $title;
         $this->content = $content;
-        $this->$user_id = $user_id;
+        $this->user_id = $user_id;  // Correction ici
         $this->created_at = $created_at;
 
     }
+
     // ... (constructeur, getters, setters, etc.)
 
     public function save()
@@ -38,6 +39,7 @@ class Wiki
         // Fermez la connexion PDO
         $pdo = null;
     }
+
     public static function getAllWikis()
     {
         $pdo = Database::getInstance();

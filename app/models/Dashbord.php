@@ -1,8 +1,7 @@
 <?php
 
-require_once 'app/models/Wiki.php';
-require_once 'app/models/User.php';
-require_once 'app/models/Database.php';
+
+require_once __DIR__ . '/../models/Database.php';
 
 
 class DashboardModel

@@ -6,13 +6,13 @@ class TagController {
 
     public function showAllTags() {
         $tags = Tag::getAllTags();
-        include 'app/views/tag.php';
+        include '/../views/tag.php';
     }
 
     // Action pour afficher un tag spécifique par son ID
     public function showTagById($tagId) {
         $tag = Tag::getTagById($tagId);
-        include 'app/views/tag.php';
+        include '/../views/tag.php';
     }
 
     // Action pour ajouter un nouveau tag

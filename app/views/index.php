@@ -14,7 +14,7 @@ ob_start();
 
                 <!-- Header -->
                 <header id="header">
-                    <a href="index.php?action=index" class="logo"><strong>SITE  </strong>wiki</a>
+                    <a href="index.php?action=index" class="logo"><strong>SITE </strong>wiki</a>
                     <ul class="icons">
                         <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
                         <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -29,9 +29,9 @@ ob_start();
                 <section id="banner">
                     <div class="content">
                         <header>
-                            <h1>Hi, I’m Editorial<br />
+                            <h1>Hi, I m WIKI<br />
                                 yassine</h1>
-                            <p>hello</p>
+
                         </header>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque cupiditate maxime, nisi
                             eveniet excepturi et libero hic perspiciatis at repellat?</p>
@@ -109,36 +109,35 @@ ob_start();
 
                 <!-- Menu -->
                 <nav id="menu">
+                    <div>
+                        <form action="">
+                            <input type="email" placeholder="email"><br>
+                            <input type="password" placeholder="password">
+                            <p><a href="">sing-up</a></p>
+                            <div id="header">
+                                <button type="submit">Login</button>
+                            </div>
+                        </form>
+
+                    </div>
+
                     <header class="major">
                         <h2>Menu</h2>
                     </header>
                     <ul>
-                        <li><a href="index.html">Homepage</a></li>
-                        <li><a href="generic.html">Generic</a></li>
-                        <li><a href="elements.html">Elements</a></li>
+                        <li><a href="index.php?action=index">Homepage</a></li>
+                        <li><a href="../app/views/wiki/addwiki.php">Liste Wikis</a></li>
+                        <li><a href="index.php?action=dashboard">statistique</a></li>
                         <li>
-                            <span class="opener">Submenu</span>
+                            <span class="opener">Gategory</span>
                             <ul>
-                                <li><a href="#">Lorem Dolor</a></li>
-                                <li><a href="#">Ipsum Adipiscing</a></li>
-                                <li><a href="#">Tempus Magna</a></li>
-                                <li><a href="#">Feugiat Veroeros</a></li>
+                                <li><a href="#">Ajouter</a></li>
+                                <li><a href="#">Modification</a></li>
+                                <li><a href="#">supprimer</a></li>
+                                <li><a href="#">afficher</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Etiam Dolore</a></li>
-                        <li><a href="#">Adipiscing</a></li>
-                        <li>
-                            <span class="opener">Another Submenu</span>
-                            <ul>
-                                <li><a href="#">Lorem Dolor</a></li>
-                                <li><a href="#">Ipsum Adipiscing</a></li>
-                                <li><a href="#">Tempus Magna</a></li>
-                                <li><a href="#">Feugiat Veroeros</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Maximus Erat</a></li>
-                        <li><a href="#">Sapien Mauris</a></li>
-                        <li><a href="#">Amet Lacinia</a></li>
+
                     </ul>
                 </nav>
 

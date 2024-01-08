@@ -1,40 +1,43 @@
 <?php
-require_once 'app/models/Wiki.php'; 
-require_once 'app/models/User.php';
-require_once 'app/models/Dashbord.php';
+require_once __DIR__ . '/../models/Dashbord.php';
+require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../models/Wiki.php';
 
-require '../autoloader.php';
-Autoloader::registre();
-use app\models\Wiki;
-use app\models\User;
-use app\models\Dashboard;
+// require '../autoloader.php';
+// Autoloader::registre();
+// use \models\Wiki;
+// use \models\User;
+// use \models\Dashboard;
 
-class DashboardController {
-    public function index() {
+class DashboardController
+{
+    public function index()
+    {
         // Assurez-vous que l'utilisateur est connecté en tant qu'administrateur
-        $this->checkAdmin();
 
+        
         $stats = $this->getStats();
-
-        include 'app/views/dashboard.php';
+        include __DIR__ . '/../views/dashboard.php';
     }
 
-    private function checkAdmin() {
+    private function checkAdmin()
+    {
         session_start();
         if (!isset($_SESSION['user']) || !$_SESSION['user']->isAdmin()) {
-            header('Location: index.php');
+            header('Location: dashboard.php');
             exit();
         }
     }
 
-    private function getStats() {
+    private function getStats()
+    {
         $stats = [
             'totalWikis' => DashboardModel::getTotalWikis(),
-            'totalUsers' => DashboardModel::getTotalUsers(), 
-           
+            'totalUsers' => DashboardModel::getTotalUsers(),
+
         ];
 
         return $stats;
     }
 }
-?>
+
