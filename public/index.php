@@ -3,39 +3,61 @@ require '../app/controllers/HomeController.php';
 require '../app/controllers/CategoryController.php';
 require '../app/controllers/WikiController.php';
 require '../app/controllers/DashboardControllre.php';
+require '../app/controllers/AuthController.php';
+require '../app/controllers/AdminController.php'; // Ajout du contrôleur d'authentification
+
 
 // Création d'un routeur.
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
     switch ($action) {
         case 'index':
-            $hoe = new HomeController();
-            $hoe->index();
+            $home = new HomeController();
+            $home->index();
             break;
         case 'category':
             $categoryId = $_GET['id'];
-            $hom = new CategoryController();
-            $hom->showCategoryById($categoryId);
+            $category = new CategoryController();
+            $category->showCategoryById($categoryId);
             break;
         case 'wiki':
             $id = $_GET['id'];
-            $ho = new WikiController();
-            $ho->showWikiById($id);
+            $wiki = new WikiController();
+            $wiki->showWikiById($id);
             break;
         case 'dashboard':
-
-            $dashboard = new DashboardController(); // Instanciez le contrôleur du tableau de bord
-            $dashboard->index(); // Appelez la méthode index pour afficher le tableau de bord
+            $dashboard = new DashboardController();
+            $dashboard->index();
             break;
         case 'insert':
             $title = $_POST['title'];
             $content = $_POST['content'];
             $user_id = $_POST['user_id'];
-            // Créer une nouvelle Wiki et l'ajouter
+
             $wikiController = new WikiController();
             $wikiController->addWiki($title, $content, $user_id);
-            $ho = new HomeController();
-            $ho->index();
+            $home = new HomeController();
+            $home->index();
+            break;
+        case 'login':
+            $auth = new AuthController();
+            $auth->showLoginForm();
+            break;
+        case 'process_login':
+            $auth = new AuthController();
+            $auth->login();
+            break;
+        case 'register':
+            $auth = new AuthController();
+            $auth->showRegistrationForm();
+            break;
+        case 'process_registration':
+            $auth = new AuthController();
+            $auth->register();
+            break;
+        case 'manage':
+            $adminController = new AdminController();
+            $adminController->manageCategories(); // Appel de la méthode pour gérer les catégories
             break;
         default:
             header('location: 404.php');

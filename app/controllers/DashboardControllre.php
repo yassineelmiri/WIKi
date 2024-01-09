@@ -34,6 +34,7 @@ class DashboardController
         $stats = [
             'totalWikis' => DashboardModel::getTotalWikis(),
             'totalUsers' => DashboardModel::getTotalUsers(),
+            'totalGategory'=> DashboardModel::getTotalCategory(),
 
         ];
 

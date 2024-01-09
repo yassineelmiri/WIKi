@@ -22,7 +22,7 @@ $path = parse_url($path, PHP_URL_PATH);
 
 $route = null;
 foreach ($routes as $pattern => $params) {
-    if ($path === "/wiki/{$pattern}") {
+    if ($path === "/wiki1/{$pattern}") {
         $route = $params;
         break;
     }

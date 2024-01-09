@@ -1,37 +1,63 @@
 <?php
-// AuthController.php
+require_once __DIR__ . '/../models/AuthModel.php';
+
 
 class AuthController
 {
-    public function login()
+    public function showLoginForm()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $email = $_POST['email'];
-            $password = $_POST['password'];
+        include __DIR__ . '/../views/login.php';
 
-            // Exemple de code (à adapter selon votre logique d'authentification réelle)
-            if ($this->validateUser($email, $password)) {
-                // Utilisateur valide, effectuez le traitement nécessaire (par exemple, définir une session)
-                // Redirection vers le tableau de bord
-                header('Location: dashboard.php');
-                exit();
-            } else {
-                $error = "Identifiants invalides";
-            }
-        }
-
-        include 'app/views/login.php';
     }
 
-    private function validateUser($email, $password)
+    public function login()
     {
-        // Logique de validation d'utilisateur (vérification dans la base de données, etc.)
-        // Retourne true si les identifiants sont valides, sinon false
-        // Exemple basique : vérifiez une combinaison email/mot de passe dans une base de données
-        $validEmail = 'user@example.com';
-        $validPassword = password_hash('password123', PASSWORD_DEFAULT);
+        // Récupérer les données du formulaire
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-        return ($email === $validEmail && password_verify($password, $validPassword));
+        // Authentifier l'utilisateur
+        $user = AuthModel::authenticate($email, $password);
+
+        if ($user) {
+            // Enregistrez les informations de l'utilisateur dans la session
+            session_start();
+            $_SESSION['user'] = $user;
+
+            // Redirection vers le tableau de bord ou la page d'accueil après la connexion
+            header('Location: index.php?action=dashboard');
+            exit();
+        } else {
+            // Gestion des erreurs de connexion, redirigez vers la page de connexion
+            header('Location: index.php?action=login');
+            exit();
+        }
+    }
+
+    public function showRegistrationForm()
+    {
+        include __DIR__ . '/../views/register.php';
+    }
+
+    public function register()
+    {
+        // Récupérer les données du formulaire
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        // Inscrire le nouvel utilisateur
+        $result = AuthModel::registerUser($username, $email, $password);
+
+        if ($result) {
+            // Redirection vers le tableau de bord ou la page d'accueil après l'inscription
+            header('Location: index.php?action=login');
+            exit();
+        } else {
+            // Gestion des erreurs d'inscription, redirigez vers la page d'inscription
+            header('Location: index.php?action=register');
+            exit();
+        }
     }
 }
 ?>

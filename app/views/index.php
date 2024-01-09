@@ -109,18 +109,11 @@ ob_start();
 
                 <!-- Menu -->
                 <nav id="menu">
-                    <div>
-                        <form action="">
-                            <input type="email" placeholder="email"><br>
-                            <input type="password" placeholder="password">
-                            <p><a href="">sing-up</a></p>
-                            <div id="header">
-                                <button type="submit">Login</button>
-                            </div>
-                        </form>
 
+                    <div id="header">
+                        <button><a href="index.php?action=login">Login</a></button>
+                        <button><a href="index.php?action=register">sign-up</a></button>
                     </div>
-
                     <header class="major">
                         <h2>Menu</h2>
                     </header>

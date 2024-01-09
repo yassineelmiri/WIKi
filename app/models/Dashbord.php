@@ -30,6 +30,17 @@ class DashboardModel
 
         return $result['total'];
     }
+    public static function getTotalCategory()
+    {
+        $pdo = Database::getInstance();
+
+        $stmt = $pdo->query("SELECT COUNT(*) as total FROM category");
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $pdo = null;
+
+        return $result['total'];
+    }
 
     // Ajoutez d'autres méthodes pour récupérer d'autres statistiques si nécessaire
 }
