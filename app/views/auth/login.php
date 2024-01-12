@@ -3,12 +3,13 @@
 <?php require_once(__DIR__."/../incFiles/website/head.php"); ?>
 <body>
     
-    <section class="w-full h-[100vh] flex justify-center items-center bg-gray-500" >
+    <section class="w-full h-[100vh] flex justify-center items-center" >
 
         <!-- Login Form -->
         <form 
             method="POST" 
-            class="w-[90vw] md:w-[70vw] lg:w-[40vw] bg-[#000] py-[8%] lg:py-[4%] md:px-[2.5%] px-[4%] md:px-[2.5%] rounded border-2 border-[#415a77] flex flex-col space-y-[5px] justify-center" >
+            class="w-[90vw] md:w-[70vw] lg:w-[40vw] bg-[#eaf4f4] py-[8%] lg:py-[4%] md:px-[2.5%] px-[4%] md:px-[2.5%] rounded border-2 border-[#415a77] flex flex-col space-y-[5px] justify-center" 
+            />
 
             <div class="flex items-center mb-4">
                 <a href="/Wiki/Pages/home"><img src="<?= UrlRoot. "/img/logo/Wiki.png" ?>" alt="Wiki Logo" width="90px" class="md:w-[120px]" ></a>
@@ -28,7 +29,7 @@
                 <button 
                     type="submit" name="login"
                     class="w-[65%] py-[5px] bg-[#415a77] text-white border-2 border-[#415a77] rounded hover:bg-[#415a77]/50 hover:text-[#415a77] focus:bg-[#284b63] focus:text-white" />Login</button>
-                <a href="register" class="w-[30%] py-[5px] bg-[#778da9]/50 text-white border-2 border-[#415a77] rounded text-center hover:text-white hover:bg-[#415a77]">Register</a>
+                <a href="register" class="w-[30%] py-[5px] bg-[#778da9]/50 text-[#415a77] border-2 border-[#415a77] rounded text-center hover:text-white hover:bg-[#415a77]">Register</a>
             </div>
 
         </form>

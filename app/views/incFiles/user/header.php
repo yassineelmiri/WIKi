@@ -1,4 +1,4 @@
-    <header class="w-full h-[80px] bg-[#000]" >
+    <header class="w-full h-[80px] bg-blue-100/70" >
 
         <div class="w-[90%] mx-auto h-[80px] flex justify-between items-center" >
 

@@ -15,8 +15,7 @@
                 <h2 class="text-xl font-[500] text-center lg:flex" >Your New Social Blog Is Right Here<span class="hidden lg:block">, Developed In Morocco, Safi</span></h2>
 
                 <div class="w-[95%] lg:w-[65%] h-[250px] bg-gray-200 mt-[25px]">
-                    <img src="<?= UrlRoot. "/img/images.jpg" ?>" alt="Hero Img" width="100%" >
-                    
+                    <img src="" alt="Hero Img" width="100%">
                 </div>
 
                 <!-- Buttons -->

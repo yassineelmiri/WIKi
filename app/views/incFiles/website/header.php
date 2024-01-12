@@ -1,4 +1,4 @@
-    <section class="bg-[#000]">
+    <section class="bg-blue-100/70">
         <header class="w-[90%] mx-auto h-[80px] flex justify-between items-center" >
 
             <!-- Logo -->
@@ -14,8 +14,16 @@
                         if (!isset($_SESSION['UserInfo'])) {
                             echo "<a href='/Wiki/Authentification/login' class='bg-[#28427B] border-2 border-[#28427B] hover:bg-[#28427B]/80 focus:bg-[#404E6C] py-[4px] lg:py-[8px] px-[15px] lg:px-[20px] rounded text-white' >Login</a>";
                             echo "<a href='/Wiki/Authentification/register' class='bg-[#28427B]/80 border-2 hover:bg-[#28427B] border-[#28427B] focus:bg-[#404E6C] py-[4px] lg:py-[8px] px-[15px] lg:px-[20px] rounded text-white'>Sign Up</a>";
-                        } else {
+                        } else if ($_SESSION['UserInfo']['role'] === "User") {
                             echo "<a href='/Wiki/Users/wikis' class='bg-[#28427B] border-2 border-[#28427B] hover:bg-[#28427B]/80 focus:bg-[#404E6C] py-[4px] lg:py-[8px] px-[15px] lg:px-[20px] rounded text-white'  >Go To Your Account</a>";
+                            
+                            /* Log Out Btn */
+                            echo "<a href='/Wiki/Authentification/logout' class='bg-red-200/80 border-2 hover:bg-red-600 hover:text-white border-red-600 text-red-600 focus:bg-[#404E6C] py-[4px] lg:py-[8px] px-[15px] lg:px-[20px] rounded'>Log Out</a>";
+                        } else {
+                            echo "<a href='/Wiki/Admin/dashboard' class='bg-[#28427B] border-2 border-[#28427B] hover:bg-[#28427B]/80 focus:bg-[#404E6C] py-[4px] lg:py-[8px] px-[15px] lg:px-[20px] rounded text-white'  >Go To Your Account</a>";
+                        
+                            /* Log Out Btn */
+                            echo "<a href='/Wiki/Authentification/logout' class='bg-red-200/80 border-2 hover:bg-red-600 hover:text-white border-red-600 text-red-600 focus:bg-[#404E6C] py-[4px] lg:py-[8px] px-[15px] lg:px-[20px] rounded'>Log Out</a>";
                         }
                     ?>
 
@@ -24,7 +32,7 @@
                     </button>
                 </div>
 
-                <ul class="fixed left-[-100%] top-0 w-[60%] lg:w-[30%] bg-[#000] h-[100vh] px-[50px] py-[4%]" id="menu" style="transition-duration: 1s;" >
+                <ul class="fixed left-[-100%] top-0 w-[60%] lg:w-[30%] bg-[#28427B] h-[100vh] px-[50px] py-[4%]" id="menu" style="transition-duration: 1s;" >
                     <li class="mb-4"><a href="home" class="text-white font-[500] text-xl lg:text-2xl">Home</a></li>
                     <li class="mb-4"><a href="categories" class="text-white font-[500] text-xl lg:text-2xl">Categories</a></li>
                     <li class="mb-4"><a href="wikis" class="text-white font-[500] text-xl lg:text-2xl">Wikis</a></li>
